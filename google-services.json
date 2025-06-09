@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "367123105094",
+    "project_id": "smart-waste-system-f9e66",
+    "storage_bucket": "smart-waste-system-f9e66.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367123105094:android:1bb2b02f3f5d1560c69147",
+        "android_client_info": {
+          "package_name": "com.judithyusuf.smwmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE8qWdbDaSqcF0glYIprmBjEMFLl9Kaj8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
