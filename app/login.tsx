@@ -41,21 +41,26 @@ export default function Login() {
   const [personnelId, setPersonnelId] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
+    setLoading(true);
     try {
       const data = await loginPersonnel(personnelId, password);
       await AsyncStorage.setItem("token", data.token);
       await AsyncStorage.setItem("personnel", JSON.stringify(data.personnel));
       const token = await registerForPushNotificationsAsync();
-      await fetch(`https://smart-waste-backend-wsmj.onrender.com/api/personnel/push-token`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ token }),
-      });
+      await fetch(
+        `https://smart-waste-backend-wsmj.onrender.com/api/personnel/push-token`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ token }),
+        }
+      );
 
       router.replace("/tabs"); // redirects to main tabs screen
     } catch (error: any) {
@@ -68,6 +73,7 @@ export default function Login() {
         JSON.stringify(error, Object.getOwnPropertyNames(error))
       );
     }
+    setLoading(false);
   };
 
   return (
@@ -110,7 +116,16 @@ export default function Login() {
             onChangeText={setPassword}
             value={password}
           />
-          <Button color="#568203" title="Login" onPress={handleLogin} />
+          {!loading ? (
+            <Button color="#568203" title="Login" onPress={handleLogin} />
+          ) : (
+            <Button
+              color="#568203"
+              title="Logging in"
+              onPress={handleLogin}
+              disabled
+            />
+          )}
         </View>
       </ImageBackground>
     </SafeAreaView>
