@@ -2,7 +2,7 @@
   "expo": {
     "name": "sm-mobile",
     "slug": "sm-mobile",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "smmobile",
@@ -36,7 +36,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+        "react-native-maps"
     ],
     "experiments": {
       "typedRoutes": true

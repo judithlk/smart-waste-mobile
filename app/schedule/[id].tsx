@@ -81,7 +81,7 @@ export default function ScheduleDetailsScreen() {
   if (!schedule) return <Text>Schedule not found.</Text>;
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View contentContainerStyle={styles.container}>
       {/* Info */}
       <View style={styles.info}>
         <View style={{ flex: 0, flexDirection: "row", alignItems: "center" }}>
@@ -156,7 +156,7 @@ export default function ScheduleDetailsScreen() {
           <Text style={{ fontSize: 14, fontWeight: "semibold", color: "#fff", textTransform: "uppercase" }}>Cancel Trip</Text>
         </Pressable>
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
