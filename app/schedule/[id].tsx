@@ -81,7 +81,7 @@ export default function ScheduleDetailsScreen() {
   if (!schedule) return <Text>Schedule not found.</Text>;
 
   return (
-    <View contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       {/* Info */}
       <View style={styles.info}>
         <View style={{ flex: 0, flexDirection: "row", alignItems: "center" }}>
